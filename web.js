@@ -36,7 +36,6 @@ app.get('/discord/authorize', (req, res) => {
   res.redirect(`https://discord.com/api/oauth2/authorize?${params.toString()}`);
 });
 
-// Callback بعد موافقة Discord
 app.get('/discord/callback', async (req, res) => {
   const { code, state } = req.query;
   const account_id = state;
@@ -79,3 +78,4 @@ app.get('/discord/callback', async (req, res) => {
 });
 
 app.listen(process.env.PORT || 3000, () => console.log('🌐 Web server running'));
+
